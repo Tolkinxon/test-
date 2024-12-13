@@ -1,0 +1,12 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "Tolkinxon",
+  "license": "ISC",
+  "description": ""
+}
