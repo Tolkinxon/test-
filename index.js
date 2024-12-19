@@ -173,21 +173,67 @@
 // 
 // console.log(new ReferenceError('hello') instanceof Error);
 
-class Test {
-    constructor(name){
-        this._name = name
-    }
+// class Test {
+//     constructor(name){
+//         this._name = name
+//     }
 
-    sayHello(){
-        console.log('hello world');
+//     sayHello(){
+//         console.log('hello world');
         
-    }
+//     }
+//     ['hello world'](){
+//         console.log('world hello');
+        
+//     }
+// }
+
+
+// const result = new Test('tolkinxon')
+// console.log();
+// result["hello world"]()
+
+// class Animal {
+//     constructor(name){
+//         this.speed = 0
+//         this.name = name
+//     }
+
+//     run(speed){
+//         this.speed = speed
+//         return `${this.name} are runnig whidth ${this.speed} km/h`
+//     }
+
+//     stop(){
+//         this.speed = 0
+//         return `${this.name} is keep standing`
+//     }
+// }
+
+// const result = new Animal('Lion');
+
+// Object.assign(Animal.prototype, {newFunction(){console.log('hello world');
+// }})
+
+// console.log(result);
+
+
+
+
+
+const obj = {
+    name: 'tolkinxon'
 }
 
+const proxy = new Proxy(obj,{
+    set: function(obj, key, value){
+        if(obj[key]) obj[key] = value
+    }
+})
 
-const result = new Test('tolkinxon')
-console.log((new Test).cosntructor)
+proxy.set(obj, 'name', 'hello')
 
+// Reflect.set(obj, 'name', "soliyev")
 
- 
+console.log(proxy);
 
