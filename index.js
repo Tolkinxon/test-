@@ -236,9 +236,8 @@
 // // Reflect.set(obj, 'name', "soliyev")
 
 // console.log(proxy);
-new URL('https:kun.uz')
 
 // new URL
 
-console.log(new URL('https:kun.uz'));
+console.log(new URL('https://localhost:3000?name=tolkinxon&sureName=soliyev'));
 
