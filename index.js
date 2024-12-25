@@ -239,5 +239,40 @@
 
 // new URL
 
-console.log(new URL('https://localhost:3000?name=tolkinxon&sureName=soliyev'));
+import http from 'http';
+import fetch from 'node-fetch';
+import { sayHello, sayHello2  } from 'salom';
 
+
+
+console.log(sayHello());
+
+
+const PORT = 5000;
+
+const query = (path, req) => {
+    const url = new URL(path, `http:${req.headers.host}`)
+    req.query = Object.fromEntries(url.searchParams);
+}
+
+
+const server = http.createServer((req, res)=>{
+    let method = req.method.toUpperCase().trim();
+    let path = req.url.toLowerCase().trim();
+
+    if(method == "GET" && path.startsWith('/users')) {
+        if(path.includes('?')) query(path, req)
+    }
+
+    console.log(req.query);
+    
+     
+     
+})
+
+server.listen(PORT, ()=> {
+    console.log('server initialized!');
+});
+
+
+fetch('http://localhost:5000/users?name=tolkinxon')
