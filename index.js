@@ -221,19 +221,24 @@
 
 
 
-const obj = {
-    name: 'tolkinxon'
-}
+// const obj = {
+//     name: 'tolkinxon'
+// }
 
-const proxy = new Proxy(obj,{
-    set: function(obj, key, value){
-        if(obj[key]) obj[key] = value
-    }
-})
+// const proxy = new Proxy(obj,{
+//     set: function(obj, key, value){
+//         if(obj[key]) obj[key] = value
+//     }
+// })
 
-proxy.set(obj, 'name', 'hello')
+// proxy.set(obj, 'name', 'hello')
 
-// Reflect.set(obj, 'name', "soliyev")
+// // Reflect.set(obj, 'name', "soliyev")
 
-console.log(proxy);
+// console.log(proxy);
+new URL('https:kun.uz')
+
+// new URL
+
+console.log(new URL('https:kun.uz'));
 
