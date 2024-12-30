@@ -239,40 +239,74 @@
 
 // new URL
 
-import http from 'http';
-import fetch from 'node-fetch';
-import { sayHello, sayHello2  } from 'salom';
+// import http from 'http';
+// import fetch from 'node-fetch';
+// import { readFileSync } from 'fs'
+// import path from 'path'
 
 
+// const PORT = process.env.PORT || 5000;
 
-console.log(sayHello());
-
-
-const PORT = 5000;
-
-const query = (path, req) => {
-    const url = new URL(path, `http:${req.headers.host}`)
-    req.query = Object.fromEntries(url.searchParams);
-}
+// const users = readFileSync(path.resolve('database', 'users.json')) ? 
+//               JSON.parse(readFileSync(path.resolve('database', 'users.json'))) : []
 
 
-const server = http.createServer((req, res)=>{
-    let method = req.method.toUpperCase().trim();
-    let path = req.url.toLowerCase().trim();
+// const query = (path, req) => {
+//     const url = new URL(path, `http://${req.headers.host}`)
+//     req.query = Object.fromEntries(url.searchParams);
+//     return true
+// }
 
-    if(method == "GET" && path.startsWith('/users')) {
-        if(path.includes('?')) query(path, req)
-    }
 
-    console.log(req.query);
+// const server = http.createServer((req, res)=>{
+//     let method = req.method.toUpperCase().trim();
+//     let path = req.url.toLowerCase().trim();
+
+//     if(method == "GET" && path.startsWith('/users')) {
+//         query(path, req);
+//         const result = [];
+//         for(let user of users ){
+//             req.isMatch = true
+//             for(let key in req.query){
+//                 if(user[key] != req.query[key]) {req.isMatch = false; break;}
+//             }
+//             if(req.isMatch) result.push(user)
+//         }
+//         return res.end(JSON.stringify(result))
+//     }
     
-     
-     
-})
+// })
 
-server.listen(PORT, ()=> {
-    console.log('server initialized!');
+// server.listen(PORT, ()=> {
+//     console.log('server initialized!');
+// });
+
+
+// fetch('http://localhost:5000/users?name=tolkinxon&age=21')
+//     .then(res => res.json())
+//     .then(data => console.log(data));
+
+// const url = new URL('https://kun.uz?name=tolkinxon')
+
+// console.log(url.searchParams.get('name'));
+
+
+const buffer = new ArrayBuffer(10);
+const uitnt8Arry = new Uint16Array(buffer)
+
+let namE = 'tolkinxon'.split('')
+namE = namE.map(item => item.charCodeAt(0))
+
+namE.forEach((element,index) => {
+    uitnt8Arry[index] = element
 });
 
+const decoder = new TextDecoder('utf-8')
 
-fetch('http://localhost:5000/users?name=tolkinxon')
+
+
+
+
+
+
+
