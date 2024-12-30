@@ -291,17 +291,38 @@
 // console.log(url.searchParams.get('name'));
 
 
-const buffer = new ArrayBuffer(10);
-const uitnt8Arry = new Uint16Array(buffer)
+// const buffer = new ArrayBuffer(10);
+// const uitnt8Arry = new Uint16Array(buffer)
 
-let namE = 'tolkinxon'.split('')
-namE = namE.map(item => item.charCodeAt(0))
+// let namE = 'tolkinxon'.split('')
+// namE = namE.map(item => item.charCodeAt(0))
 
-namE.forEach((element,index) => {
-    uitnt8Arry[index] = element
-});
+// namE.forEach((element,index) => {
+//     uitnt8Arry[index] = element
+// });
 
-const decoder = new TextDecoder('utf-8')
+// const decoder = new TextDecoder('utf-8')
+
+
+const arrBuffer = new ArrayBuffer(10);
+const dw = new DataView(arrBuffer);
+
+
+dw.setInt8(0, 111);
+dw.setInt8(1,73);
+
+// console.log(dw);
+// console.log(dw.getInt8(0));
+
+// console.log(String.fromCharCode(dw.getInt8(0)));
+const decode = new TextDecoder('utf-8')
+console.log(decode.decode(dw));
+
+
+
+
+
+
 
 
 
